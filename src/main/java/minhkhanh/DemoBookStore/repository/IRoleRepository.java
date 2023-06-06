@@ -3,8 +3,11 @@ package minhkhanh.DemoBookStore.repository;
 import minhkhanh.DemoBookStore.enitity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
-public interface IRoleRepository extends JpaRepository<Role,Long> {
-    @Query("Select r.id from role r where r.name = ?1")
+@Repository
+public interface IRoleRepository extends JpaRepository<Role, Long> {
+
+    @Query("SELECT r.id FROM Role r WHERE r.name = ?1")
     Long getRoleIdByName(String roleName);
 }

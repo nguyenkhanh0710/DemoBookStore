@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import minhkhanh.DemoBookStore.validator.annotation.ValidCategoryId;
-import minhkhanh.DemoBookStore.validator.annotation.ValidUserId;
+import minhkhanh.DemoBookStore.validator.annotation1.ValidCategoryId;
+import minhkhanh.DemoBookStore.validator.annotation1.ValidUserId;
 
 
 @Data

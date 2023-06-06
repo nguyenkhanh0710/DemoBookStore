@@ -2,10 +2,11 @@ package minhkhanh.DemoBookStore.enitity;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
-import minhkhanh.DemoBookStore.validator.annotation.ValidUserId;
+import minhkhanh.DemoBookStore.validator.annotation1.ValidUserId;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import minhkhanh.DemoBookStore.validator.annotation1.ValidUsername;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -23,7 +24,7 @@ public class User {
     @Column(name = "username", length = 50, nullable = false, unique = true)
     @NotBlank(message = "Username is required")
     @Size(max=50,message = "Không được lớn hơn 50 ký tự")
-    @ValidUserId
+    @ValidUsername
     private String username;
 
     @Column(name = "password", length = 250, nullable = false)

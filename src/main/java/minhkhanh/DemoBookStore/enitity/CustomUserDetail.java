@@ -7,13 +7,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.stream.Collectors;
 
 public class CustomUserDetail implements UserDetails {
 
     private final User user;
     private final IUserRepository userRepository;
+
     public CustomUserDetail(User user, IUserRepository userRepository) {
         this.user = user;
         this.userRepository = userRepository;
@@ -21,7 +21,7 @@ public class CustomUserDetail implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.stream(userRepository.getRoles0User(user.getId()))
+        return Arrays.stream(userRepository.getRolesOfUser(user.getId()))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toSet());
     }
